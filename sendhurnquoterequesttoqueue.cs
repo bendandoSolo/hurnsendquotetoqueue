@@ -22,7 +22,13 @@ namespace Bendando.SendHurnQuoteToQueue
         var logger = executionContext.GetLogger("HttpExample");
         logger.LogInformation("C# HTTP trigger function processed a request.");
 
-        var message = "Welcome to Azure Functions!";
+			string requestBody = String.Empty;
+			using (StreamReader streamReader =  new  StreamReader(req.Body))
+			{
+				requestBody = ' ' + streamReader.ReadToEnd();
+			}
+
+        var message = requestBody;
 
         var response = req.CreateResponse(HttpStatusCode.OK);
         response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
