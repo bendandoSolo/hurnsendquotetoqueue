@@ -6,8 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Bendando.SendHurnQuoteToQueue
 {
-    public class 
-	 
+    public class sendhurnquoterequesttoqueue
     {
         private readonly ILogger _logger;
 
